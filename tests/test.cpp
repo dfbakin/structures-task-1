@@ -6,7 +6,6 @@
 
 #include "point.h"
 
-
 TEST_CASE("Point: Structure definition and initialization") {
     Point p;
     REQUIRE(sizeof(p.x) == sizeof(double));
@@ -15,14 +14,14 @@ TEST_CASE("Point: Structure definition and initialization") {
 
 TEST_CASE("Point: Initialization with zeros by default") {
     Point p;
-    REQUIRE(std::abs(p.x) < 1e-9); // Check if x is initialized to 0
-    REQUIRE(std::abs(p.y) < 1e-9); // Check if y is initialized to 0
+    REQUIRE(std::abs(p.x) < 1e-9);  // Check if x is initialized to 0
+    REQUIRE(std::abs(p.y) < 1e-9);  // Check if y is initialized to 0
 }
 
 TEST_CASE("Square area of rectangle defined by two points") {
     Point a{1.0, 2.0};
     Point b{4.0, 6.0};
-    
+
     double area = rectangleSquare(a, b);
     REQUIRE(area == Approx(12.0).epsilon(1e-9));
 }
